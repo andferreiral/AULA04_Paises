@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ListaPaisesActivity extends Activity {
     public static final String PAIS = "br.usjt.deswebmob.paises.pais";
     Activity atividade;
-    ArrayList<Pais> paises;
+    Pais[] paises;
     ArrayList<String> nomes;
 
     @Override
@@ -31,7 +31,7 @@ public class ListaPaisesActivity extends Activity {
 
         ListView listView = findViewById(R.id.lista_paises);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,nomes);
+        PaisAdapter adapter = new PaisAdapter(paises, this);
 
         listView.setAdapter(adapter);
 
@@ -39,7 +39,7 @@ public class ListaPaisesActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(atividade, DetalhePaisActivity.class);
-                intent.putExtra(PAIS, paises.get(position));
+                intent.putExtra(PAIS, paises[position]);
                 startActivity(intent);
             }
         });

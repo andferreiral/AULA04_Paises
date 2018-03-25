@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class Data {
 
-    public static ArrayList<String> listarNomes(ArrayList<Pais> paises){
+    public static ArrayList<String> listarNomes(Pais[] paises){
         ArrayList<String> nomes = new ArrayList<>();
         for(Pais pais: paises){
             nomes.add(pais.getNome());
@@ -16,7 +16,7 @@ public class Data {
         return nomes;
     }
 
-    public static ArrayList<Pais> listarPaises(String continente){
+    public static Pais[] listarPaises(String continente){
         Pais[] lista;
         ArrayList<Pais> paises = new ArrayList<>();
         for(Pais pais: todosPaises()){
@@ -28,11 +28,12 @@ public class Data {
         lista = paises.toArray(new Pais[0]);
         Arrays.sort(lista);
 
-        paises = new ArrayList<>();
+        /*paises = new ArrayList<>();
         for(int i = 0; i < lista.length; i++){
             paises.add(lista[i]);
-        }
-        return paises;
+        }*/
+
+        return lista;
     }
 
     public static ArrayList<Pais> todosPaises(){

@@ -1,12 +1,13 @@
-package br.usjt.deswebmob.paises;
+package br.usjt.deswebmob.paises.model.entity;
 
 import java.io.Serializable;
-import java.text.Collator;
 import java.util.ArrayList;
+import java.text.Collator;
 
 /**
- * Created by andrey on 14/03/18.
+ * Created by andrey on 17/04/18.
  */
+
 public class Pais implements Serializable, Comparable {
     private String nome;
     private String codigo3;
@@ -166,30 +167,30 @@ public class Pais implements Serializable, Comparable {
     public String toString() {
         return "Pais{" +
                 "\nnome='" + nome + '\'' +
-                ", \ncodigo3='" + codigo3 + '\'' +
-                ", \ncapital='" + capital + '\'' +
-                ", \nregiao='" + regiao + '\'' +
-                ", \nsubRegiao='" + subRegiao + '\'' +
-                ", \ndemonimo='" + demonimo + '\'' +
-                ", \npopulacao=" + populacao +
-                ", \narea=" + area +
-                ", \nbandeira='" + bandeira + '\'' +
-                ", \ngini=" + gini +
-                ", \nidiomas=" + idiomas +
-                ", \nmoedas=" + moedas +
-                ", \ndominios=" + dominios +
-                ", \nfusos=" + fusos +
-                ", \nfronteiras=" + fronteiras +
-                ", \nlatitude=" + latitude +
-                ", \nlongitude=" + longitude +
+                "\ncodigo3='" + codigo3 + '\'' +
+                "\ncapital='" + capital + '\'' +
+                "\nregiao='" + regiao + '\'' +
+                "\nsubRegiao='" + subRegiao + '\'' +
+                "\ndemonimo='" + demonimo + '\'' +
+                "\npopulacao=" + populacao +
+                "\narea=" + area +
+                "\nbandeira='" + bandeira + '\'' +
+                "\ngini=" + gini +
+                "\nidiomas=" + idiomas +
+                "\nmoedas=" + moedas +
+                "\ndominios=" + dominios +
+                "\nfusos=" + fusos +
+                "\nfronteiras=" + fronteiras +
+                "\nlatitude=" + latitude +
+                "\nlongitude=" + longitude +
                 "\n}";
     }
 
     @Override
-    public int compareTo(Object o){
-        if (o == null || o.getClass() != getClass()){
+    public int compareTo(Object o) {
+        if (o == null || o.getClass() != getClass()) {
             return 0;
-        }else {
+        } else {
             Pais pais = (Pais) o;
             Collator c = Collator.getInstance();
             c.setStrength(Collator.PRIMARY);
